@@ -10,8 +10,9 @@ public class swap {
         int B=scan.nextInt();
 
         A=A+B;
-        B=A-B;
+        B=A-B;  
         A=A-B;
         System.out.println("A: "+A+"\n"+"B: "+B);
+        scan.close();
     }
 }
