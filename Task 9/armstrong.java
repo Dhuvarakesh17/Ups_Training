@@ -11,6 +11,7 @@ public class armstrong {
             n/=10;
         }
         System.out.println(sum==temp);
+        scan.close();
     }
     
 }
