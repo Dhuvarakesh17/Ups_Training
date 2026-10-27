@@ -17,7 +17,6 @@ class Customer{
             if(i==0){
                 for(int j=0;j<3;j++){
                     System.out.println(" "+(j+1)+". "+fruits[j]+": $"+fp[j]);
-
                 }
             }
             else if(i==1){
@@ -75,7 +74,7 @@ class Customer{
                     tot+=quantity[i][j]*vp[j];
                 }
                 else{
-                    tot+=quantity[i][j]*fp[j];
+                    tot+=quantity[i][j]*jp[j];
                 }
             }
         }
