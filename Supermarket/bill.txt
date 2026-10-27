@@ -1,0 +1,11 @@
+Bill
+Total is $120
+Bill
+Fruits:
+Banana x 2 = $120
+Guava x 2 = $140
+Vegetables:
+Juices:
+Strawberry Milkshake x 2 = $40
+Chocolate Milkshake x 1 = $70
+Total is $370

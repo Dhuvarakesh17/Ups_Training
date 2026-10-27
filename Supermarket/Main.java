@@ -1,5 +1,9 @@
 package Supermarket;
 import java.util.Scanner;
+import java.io.PrintWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
 class Customer{
     String[] cat={"Fruits","Vegetables","Juice"};
     String[] fruits={"Apple","Banana","Guava"};
@@ -80,10 +84,38 @@ class Customer{
         }
         System.out.println("Total is $"+tot);
     }
+    void printBill() throws IOException{
+        try(PrintWriter writer=new PrintWriter(new FileWriter("bill.txt",true))){
+            writer.println("Bill");
+            writer.println("Fruits:");
+            for(int i=0;i<3;i++){   
+                if(quantity[0][i]>0){
+                    writer.println(fruits[i]+" x "+quantity[0][i]+" = $"+(quantity[0][i]*fp[i]));
+                }
+            }
+            writer.println("Vegetables:");
+            for(int i=0;i<3;i++){   
+                if(quantity[1][i]>0){
+                    writer.println(vege[i]+" x "+quantity[1][i]+" = $"+(quantity[1][i]*vp[i]));
+                }
+            }
+            writer.println("Juices:");
+            for(int i=0;i<3;i++){   
+                if(quantity[2][i]>0){
+                    writer.println(juice[i]+" x "+quantity[2][i]+" = $"+(quantity[2][i]*jp[i]));
+                }
+            }   
+    
+            new ProcessBuilder("notepad.exe","bill.txt").start();
+            writer.println("Total is $"+tot);
+
+        }
+    }
+    
 }
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
         Customer c1=new Customer();
         System.out.println("SuperMarket:");
         while(true){
@@ -134,6 +166,7 @@ public class Main {
                     break;
                 case 3:
                     c1.getTotal();
+                    c1.printBill();
                     break;
                 case 4:
                     System.out.println("You have Exited the SuperMarket.");
