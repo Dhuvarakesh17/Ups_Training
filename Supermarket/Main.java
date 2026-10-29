@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.*;
+
 class Customer{
     String[] cat={"Fruits","Vegetables","Juice"};
     String[] fruits={"Apple","Banana","Guava"};
